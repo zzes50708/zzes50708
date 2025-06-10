@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>戀愛任務啟動</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: 'Noto Sans TC', '微軟正黑體', sans-serif;
+      background: linear-gradient(to bottom right, #fff0f5, #ffe4e1);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .container {
+      text-align: center;
+      background-color: rgba(255, 255, 255, 0.95);
+      padding: 30px 20px;
+      border-radius: 20px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+      max-width: 90%;
+      width: 360px;
+    }
+
+    .title {
+      font-size: 1.4rem;
+      color: #d63384;
+      margin-bottom: 15px;
+    }
+
+    .intro {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: #333;
+      margin-bottom: 25px;
+    }
+
+    input[type="text"] {
+      padding: 10px;
+      width: 70%;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+      margin-bottom: 10px;
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: #d63384;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #c02570;
+    }
+
+    .error {
+      color: red;
+      margin-top: 10px;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="title">🎂💌 生日限定任務已啟動！ 💌🎂</div>
+    <div class="intro">
+      親愛的小寶，恭喜妳悄悄觸發了<br>
+      【戀愛任務・甜蜜謎語篇】💘<br><br>
+
+      從6/14 0:00起，妳有 <strong>24小時</strong> 的時間，<br>
+      找出我藏在世界裡的線索。<br><br>
+
+      這不是普通的任務，<br>
+      因為每一道謎題都藏著我對妳的小心思、<br>
+      小回憶，還有好多好多的愛。💗<br><br>
+
+      ⏳ 倒數開始！偵探小姐！<br>
+      準備好接受愛之挑戰了嗎？🕵️‍♀️🌹
+    </div>
+    <input type="text" id="answer" placeholder="請輸入">
+    <br>
+    <button onclick="checkAnswer()">送出</button>
+    <div class="error" id="errorMsg"></div>
+  </div>
+
+  <script>
+    function checkAnswer() {
+      const input = document.getElementById("answer").value.trim();
+      const errorMsg = document.getElementById("errorMsg");
+      if (input === "接受") {
+        window.location.href = "riddle1.html";
+      } else {
+        errorMsg.textContent = "要打『接受』才能開始任務喔 💌";
+      }
+    }
+  </script>
+</body>
+</html>
